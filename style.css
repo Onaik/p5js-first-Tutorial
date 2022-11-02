@@ -6,3 +6,56 @@ html, body {
 canvas {
   display: block;
 }
+
+.modelSlider {
+  position: absolute;
+  
+  bottom: 50px;
+
+
+
+
+  transform: rotate(90deg);
+}
+
+.amountSlider {
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+  transform: rotate(90deg);
+}
+
+.amountXSlider {
+  position: absolute;
+  bottom: 50px;
+  left: 80px;
+  transform: rotate(90deg);
+}
+
+.cubeRotateXSlider {
+  position: absolute;
+  bottom: 50px;
+  left: 110px;
+  transform: rotate(90deg);
+}
+
+.cubeRotateYSlider {
+  position: absolute;
+  bottom: 50px;
+  left: 120px;
+  transform: rotate(90deg);
+}
+
+.cubeRotateYSlider {
+  position: absolute;
+  bottom: 50px;
+  left: 150px;
+  transform: rotate(90deg);
+}
+
+.scaleSlider1 {
+  position: absolute;
+  bottom: 50px;
+  left: 180px;
+  transform: rotate(90deg);
+}
