@@ -76,7 +76,7 @@ function toggleanimation() {
 }
 function draw() {
   background(200);
-<<<<<<< HEAD
+
   speed = cubeXRotateSpeed.value()
 console.log("h:"+h+" spd:"+speed);
 
