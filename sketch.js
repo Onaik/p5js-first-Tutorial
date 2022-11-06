@@ -1,17 +1,17 @@
 
-let models = [];
-let modelSlider;
-let amountSlider;
-let amountXSlider;
-let cubeRotateXSlider;
-let cubeRotateYSlider;
-let scaleSlider1;
+let models = []
+let modelSlider
+let amountSlider
+let amountXSlider
+let cubeRotateXSlider
+let cubeRotateYSlider
+let scaleSlider1
 let animating = false;
-let cubeXRotateSpeed;
-let animatebutton;
+let cubeXRotateSpeed
+let animatebutton
 
-let h = 0;
-let speed = .1;
+let h = 0
+let speed = .1
 
 function preload() {
   for (let i = 0; i <= 2; i++) {
@@ -20,64 +20,44 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1500, 600, WEBGL);
+  createCanvas(400, 400);
+  createCanvas(1500, 900, WEBGL);
   console.log(models);
 
- 
 
-  //sliders;
-  modelSlider = createSlider(0, 2, 0, 1);
-  modelSlider.class ("modelSlider") ;
-  amountSlider = createSlider (1,10,1,1);
-  amountSlider.class ("amountSlider");
-  amountXSlider = createSlider (1,20,1,1);
-  amountXSlider.class ("amountXSlider");
-  cubeRotateXSlider = createSlider (0,50,40);
-  cubeRotateXSlider.class ("cubeRotateXSlider");
-  cubeRotateYSlider = createSlider (0,50,40);
-  cubeRotateYSlider.class ("cubeRotateYSlider");
-  scaleSlider1 = createSlider (1,8,1,1);
-  scaleSlider1.class ("scaleSlider1");
-  cubeXRotateSpeed = createSlider (.1,1,.3,.1);
-  cubeXRotateSpeed.class =("cubeXRotateSpeed");
+
+  //sliders
+  modelSlider = createSlider(0, 2, 0, 1)
+  modelSlider.class ("modelSlider") 
+  amountSlider = createSlider (1,10,1,1)
+  amountSlider.class ("amountSlider")
+  amountXSlider = createSlider (1,20,1,1)
+  amountXSlider.class ("amountXSlider")
+  cubeRotateXSlider = createSlider (0,50,40)
+  cubeRotateXSlider.class ("cubeRotateXSlider")
+  cubeRotateYSlider = createSlider (0,50,40)
+  cubeRotateYSlider.class ("cubeRotateYSlider")
+  scaleSlider1 = createSlider (4,16,4,1)
+  scaleSlider1.class ("scaleSlider1")
+  cubeXRotateSpeed = createSlider (.1,1,.3,.1)
+  cubeXRotateSpeed.class =("cubeXRotateSpeed")
 
   //buttons
- animatebutton = createButton("animate");
-  animatebutton.mousePressed(toggleanimation);
+ animatebutton = createButton("animate")
+  animatebutton.mousePressed(toggleanimation)
 
   //button.mousePressed(animating=true)
-
-
-
-var widthSlider;
-
-function preload() {
-  // Load model with normalise parameter s;et to true;
-  cubye = loadModel('Models/cubye.obj', true);
-  cubye2 = loadModel('Models/cubye2.obj', true );
-  slider = createSlider(0,100,40);
-  slider.position(100,100);
-  slider.style('width','80px');
-  widthSlider = createSlider (3,100,40);
-  widthSlider.position(40,40);
-  
-
-}
-
-function setup() {
-  createCanvas(500, 500, WEBGL);
- 
 
 }
 
 function toggleanimation() {
 
-  animating = !animating  ;
+  animating = !animating
 }
 function draw() {
+  background(125);
   background(200);
-
-  speed = cubeXRotateSpeed.value();
+  speed = cubeXRotateSpeed.value()
 console.log("h:"+h+" spd:"+speed);
 
   // problem is the next line...
@@ -103,47 +83,47 @@ console.log("h:"+h+" spd:"+speed);
   push();
 
    for (let index = 0; index < amountSlider.value(); index++) {
-    translate(30,0);
-    rotateX(cubeRotateXSlider.value());
-    rotateY(cubeRotateYSlider.value());
-    scale(scaleSlider1.value());
-     
+    translate (.5,0);
+    rotateX(cubeRotateXSlider.value())
+    rotateY(cubeRotateYSlider.value())
+    scale(scaleSlider1.value())
+
     model( models[modelSlider.value()] );
      pop();
 
      push();
      for (let index = 0; index < amountXSlider.value(); index++) {
-      translate(0,30);
+      translate(0,.6);
        model( models[modelSlider.value()] );
        pop();
      }
    }
   //model( models[modelSlider.value()] );
-  let modelval = modelSlider.value();
-  switch (modelval) {
+  let val = modelSlider.value()
+  switch (val) {
     case 0:
-      rotateX(cubeRotateXSlider.value());
+      rotateX(cubeRotateXSlider.value())
       normalMaterial();
-      translate(30,0);
-      scale(scaleSlider1.value(), scaleSlider1.value());
+      translate(30,0)
+      scale(scaleSlider1.value(), scaleSlider1.value())
       model( models[0] );
 
       break;
- 
+
       case 1:
-        rotateX(cubeRotateXSlider.value());
+        rotateX(cubeRotateXSlider.value())
         normalMaterial();
-        scale(scaleSlider1.value(),scaleSlider1.value());
-        model(models[1]);
+        scale(scaleSlider1.value(),scaleSlider1.value())
+        model(models[1])
 
 
         break;
 
         case 2:
-          rotateX(cubeRotateXSlider.value());
+          rotateX(cubeRotateXSlider.value())
           normalMaterial();
-          scale(scaleSlider1.value(), scaleSlider1.value());
-          model(models[2]);
+          scale(scaleSlider1.value(), scaleSlider1.value())
+          model(models[2])
 
       
 
@@ -201,5 +181,4 @@ console.log("h:"+h+" spd:"+speed);
  
   //have a slider with multiple files depicting multiple extrudes
 
-}
 }
