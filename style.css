@@ -10,7 +10,7 @@ canvas {
 .modelSlider {
   position: absolute;
   
-  bottom: 50px;
+  bottom: -100px;
 
 
 
@@ -20,42 +20,47 @@ canvas {
 
 .amountSlider {
   position: absolute;
-  bottom: 50px;
-  left: 40px;
+  bottom: -100px;
+  left: 200px;
   transform: rotate(90deg);
 }
 
 .amountXSlider {
   position: absolute;
-  bottom: 50px;
-  left: 80px;
+  bottom: -100px;
+  left: 20000px;
   transform: rotate(90deg);
 }
 
 .cubeRotateXSlider {
   position: absolute;
-  bottom: 50px;
-  left: 110px;
+  bottom: -100px;
+  left: 510px;
   transform: rotate(90deg);
 }
 
 .cubeRotateYSlider {
   position: absolute;
-  bottom: 50px;
-  left: 120px;
+  bottom: -100px;
+  left: 500px;
   transform: rotate(90deg);
 }
 
 .cubeRotateYSlider {
   position: absolute;
-  bottom: 50px;
-  left: 150px;
+  bottom: -100px;
+  left: 600px;
   transform: rotate(90deg);
 }
 
 .scaleSlider1 {
   position: absolute;
-  bottom: 50px;
-  left: 180px;
+  bottom: -100px;
+  left: 800px;
   transform: rotate(90deg);
+}
+
+.animatebutton {
+  position: absolute;
+  bottom: -100px;
 }
