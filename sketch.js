@@ -12,6 +12,7 @@ let animatebutton
 
 let h = 0
 let speed = .1
+let animateForward = true;
 
 function preload() {
   for (let i = 0; i <= 2; i++) {
@@ -58,22 +59,17 @@ function draw() {
   background(125);
   background(200);
   speed = cubeXRotateSpeed.value()
-console.log("h:"+h+" spd:"+speed);
 
-  // problem is the next line...
-  // the variable "animating" is  never true...
-  // it's set to false at the start of the sketch
-  // and never changed anywhere.
-  // come back over...
-    if (animating) {
+  if (animating) {
+    if (animateForward) { 
       h += speed;
-      cubeRotateXSlider.value(h);
-      if (h >= 50|| h <= 0) {
-        speed *= -1;
-      }
+      if (h > 50) animateForward = false;
+    } else {
+      h -= speed;
+      if (h < 0) animateForward = true;
     }
-
-
+    cubeRotateXSlider.value(h);
+  }    
 
 
   /* to toggle a boolean back and forth. ...
